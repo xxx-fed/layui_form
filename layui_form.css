@@ -1,0 +1,182 @@
+/** 页面元素 **/
+.layui-btn, .layui-input, .layui-textarea, .layui-upload-button{
+	outline: none; 
+	-webkit-transition: border-color .3s cubic-bezier(.65,.05,.35,.5); 
+	transition: border-color .3s cubic-bezier(.65,.05,.35,.5); 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+.layui-inline{position: relative; display: inline-block; *display:inline; *zoom:1; vertical-align: middle;}
+
+/* 三角形 下拉菜单用到*/.layui-edge{position: absolute; width: 0; height: 0; border-style: dashed; border-color: transparent; overflow: hidden;}
+/* 屏蔽选中 */.layui-unselect{-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
+.layui-disabled,.layui-disabled:hover{color: #d2d2d2 !important; cursor: not-allowed !important;}
+
+/** 表单 **/
+.layui-input, .layui-textarea{
+	display: block; 
+	width: 100%; 
+	padding-left: 10px; 
+	height: 38px; 
+	line-height: 38px; 
+	line-height: 36px\9; 
+	border: 1px solid #e6e6e6; 
+	background-color: #fff; 
+	border-radius: 2px;
+}
+.layui-input:hover, .layui-textarea:hover{
+	border-color: #D2D2D2;
+}
+.layui-input:focus, .layui-textarea:focus{
+	border-color: #C9C9C9
+}
+.layui-textarea{
+	position: relative; 
+	min-height: 100px; 
+	height: auto; 
+	line-height: 20px; 
+	padding: 6px 10px; 
+	resize: vertical;
+}
+.layui-form select, 
+.layui-form input[type=checkbox],
+.layui-form input[type=radio]{display: none;}
+
+.layui-form-item{margin-bottom: 15px; clear: both; *zoom: 1;}
+.layui-form-item:after{content:'\20'; clear: both; *zoom: 1; display: block; height:0;}
+.layui-form-label{
+	position: relative; 
+	float: left; 
+	display: block; 
+	padding: 9px 15px;  
+	width: 80px; 
+	font-weight:normal;
+	line-height: 20px; 
+	text-align: right;
+}
+.layui-form-item .layui-inline{margin-bottom: 5px; margin-right: 10px;}
+.layui-input-block, .layui-input-inline{position: relative;}
+.layui-input-block{margin-left: 110px; min-height: 36px;}
+.layui-input-inline{
+	display: inline-block; 
+	vertical-align: middle;
+}
+.layui-form-item .layui-input-inline{float: left; width: 190px; margin-right: 10px;}
+.layui-form-text .layui-input-inline{width: auto;}
+
+/* 分割块 */.layui-form-mid{position: relative; float: left; display: block; padding: 8px 0; line-height: 20px; margin-right: 10px;}
+/* 警告域 */.layui-form-danger:focus
+,.layui-form-danger+.layui-form-select .layui-input{border: 1px solid #FF5722 !important;}
+
+
+/* 下拉选择 */.layui-form-select{position: relative;}
+.layui-form-select .layui-input{padding-right: 30px; cursor: pointer;}
+.layui-form-select .layui-edge{position: absolute; right: 10px; top: 50%; margin-top: -3px; cursor: pointer; border-width: 6px; border-top-color: #c2c2c2; border-top-style: solid; transition: transform .3s; transition: transform .3s,-webkit-transform .3s;}
+.layui-form-select dl{display: none; position: absolute; left: 0; top: 42px; margin-bottom: 50px; padding: 5px 0; z-index: 999; min-width: 100%; border: 1px solid #d2d2d2; max-height: 300px; overflow-y: auto; background-color: #fff; border-radius: 2px; box-shadow: 0 2px 4px rgba(0,0,0,.12); box-sizing: border-box;}
+.layui-form-select dl dt,
+.layui-form-select dl dd{padding: 0 10px; line-height: 36px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.layui-form-select dl dt{font-size: 12px; color: #999;}
+.layui-form-select dl dd{cursor: pointer;}
+.layui-form-select dl dd:hover{background-color: #f2f2f2;}
+.layui-form-select .layui-select-group dd{padding-left: 20px;}
+.layui-form-select dl dd.layui-this{background-color: #5FB878; color: #fff;}
+.layui-form-select dl dd.layui-disabled{background-color: #fff;}
+.layui-form-selected dl{display: block;}
+.layui-form-selected .layui-edge{margin-top: -9px; -webkit-transform:rotate(180deg); transform: rotate(180deg);}
+.layui-form-selected .layui-edge{margin-top: -3px\0; }
+:root .layui-form-selected .layui-edge{margin-top: -9px\0/IE9;}
+
+.layui-select-disabled .layui-disabled{border-color: #eee !important;}
+.layui-select-disabled .layui-edge{border-top-color: #d2d2d2}
+
+/* 复选框 */.layui-form-checkbox{position: relative; display: inline-block; vertical-align: middle; height: 30px; line-height: 28px; margin: 4px 10px 0 0; padding-right: 30px; border: 1px solid #d2d2d2; background-color: #fff; cursor: pointer; font-size: 0; border-radius: 2px;  -webkit-transition: .1s linear; transition: .1s linear; box-sizing: border-box !important;}
+.layui-form-checkbox:hover{border: 1px solid #c2c2c2;}
+.layui-form-checkbox *{display: inline-block; vertical-align: middle;}
+.layui-form-checkbox span{padding: 0 10px; font-size: 14px; background-color: #d2d2d2; color: #fff; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.layui-form-checkbox:hover span{background-color: #c2c2c2;}
+.layui-form-checkbox i{
+	position: absolute; 
+	right: 0; 
+	width: 30px;
+	height: 28px;
+}
+.layui-form-checkbox:hover i{
+	background: url('img/checkbox.png');
+}
+.layui-form-checked, .layui-form-checked:hover{border: 1px solid #5FB878;}
+.layui-form-checked span, .layui-form-checked:hover span{background-color: #5FB878;}
+.layui-form-checked i, .layui-form-checked:hover i{
+	background: url('img/checkboxed.png');
+}
+
+/* 复选框-开关风格 */.layui-form-switch{position: relative; display: inline-block; vertical-align: middle; height: 22px; line-height: 22px; width: 40px; padding: 0 5px; margin-top: 8px; border: 1px solid #d2d2d2; border-radius: 20px; cursor: pointer; background-color: #fff; -webkit-transition: .1s linear; transition: .1s linear;}
+.layui-form-switch i{position: absolute; left: 5px; top: 3px; width: 16px; height: 16px; border-radius: 20px; background-color: #d2d2d2; -webkit-transition: .1s linear; transition: .1s linear;}
+.layui-form-onswitch{border-color: #5FB878; background-color: #5FB878;}
+.layui-form-onswitch:before{content: 'ON'; color: #fff;}
+.layui-form-onswitch i{left: 30px; background-color: #fff;}
+
+.layui-checkbox-disbaled{border-color: #e2e2e2 !important;}
+.layui-checkbox-disbaled span{background-color: #e2e2e2 !important;}
+.layui-checkbox-disbaled:hover i{background: transparent!important;}
+
+/* 单选框 */
+.layui-form-radio{display: inline-block; vertical-align: middle; line-height: 28px; margin: 6px 10px 0 0; padding-right: 10px; cursor: pointer; font-size: 0;}
+.layui-form-radio *{display: inline-block; vertical-align: middle;}
+.layui-form-radio i{ 
+	width: 20px;
+	height: 20px;
+	margin-right: 8px;
+	background: url('img/radio.png') no-repeat;
+ }
+.layui-form-radio  span{font-size: 14px;}
+.layui-form-radioed i,.layui-form-radio i:hover{background: url('img/radioed.png') no-repeat;}
+.layui-radio-disbaled i{background: url('img/radio-disbaled.png') no-repeat;}
+
+
+
+/* 按钮 */
+.layui-btn{
+	display: inline-block; 
+	vertical-align: middle; 
+	height: 38px; 
+	line-height: 38px; 
+	padding: 0 18px; 
+	background-color: #009688; 
+	color: #fff; 
+	white-space: nowrap; 
+	text-align: center; 
+	border: none; 
+	border-radius: 2px; 
+	cursor: pointer; 
+	opacity: 0.9; filter:alpha(opacity=90); 
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none;
+}
+.layui-btn:hover{
+	opacity: 0.8; 
+	filter:alpha(opacity=80); 
+	color: #fff;
+}
+.layui-btn:active{
+	opacity: 1; 
+	filter:alpha(opacity=100);
+}
+.layui-btn+.layui-btn{margin-left: 10px;}
+/* 圆角 */.layui-btn-radius{border-radius: 100px;}
+
+
+/** 动画 **/
+.layui-anim{-webkit-animation-duration: 0.3s; animation-duration: 0.3s; -webkit-animation-fill-mode: both; animation-fill-mode: both;}
+
+
+@-webkit-keyframes layui-upbit{ /* 微微往上滑入 */
+  from {-webkit-transform: translate3d(0, 30px, 0); opacity: 0.3;}
+  to {-webkit-transform: translate3d(0, 0, 0);  opacity: 1;}
+}
+@keyframes layui-upbit{
+  from {transform: translate3d(0, 30px, 0);  opacity: 0.3;}
+  to {transform: translate3d(0, 0, 0);  opacity: 1;}
+}
+.layui-anim-upbit{-webkit-animation-name: layui-upbit; animation-name: layui-upbit;}
