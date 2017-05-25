@@ -55,7 +55,7 @@
 
 
 	
-	var layer = require('layer');
+	var layer = require('layer')
 	
 	,MOD_NAME = 'form', ELEM = '.layui-form', THIS = 'layui-this', SHOW = 'layui-show', DISABLED = 'layui-disabled'
 	
