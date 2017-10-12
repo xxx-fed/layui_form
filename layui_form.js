@@ -165,7 +165,6 @@
 				selects.each(function(index, select){
 					var othis = $(this), hasRender = othis.next('.'+CLASS), disabled = this.disabled;
 					var value = select.value, selected = $(select.options[select.selectedIndex]); //获取当前选中项
-					console.log(othis.find('*'));
 					//替代元素
 					var reElem = $([
 						'<div class="layui-unselect '+ CLASS + (disabled ? ' layui-select-disabled' : '') +'">'
