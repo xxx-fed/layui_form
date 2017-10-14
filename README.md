@@ -379,8 +379,10 @@ radio单选框被点击时触发，回调函数返回一个object参数，携带
 
 
 ## 更新渲染
-有些时候，你的有些表单元素可能是动态插入的。这时Form模块的自动化渲染是会对其失效的。虽然我们没有双向绑定机制（因为我们叫经典模块化框架，咩哈哈哈哈。。。），但没事，你只需要执行 form.render(type); 方法即可。 
-其中的type即表单的type类型，可选。默认对全部类型的表单进行一次更新。可局部刷新的type如下表：
+
+有些时候，你的有些表单元素可能是动态插入的。这时 Form模块 的自动化渲染是会对其失效的。虽然我们没有双向绑定机制（因为我们叫经典模块化框架，偷笑.gif） 但没有关系，你只需要执行 form.render(type, filter); 方法即可。
+
+第一个参数：type，为表单的type类型，可选。默认对全部类型的表单进行一次更新。可局部刷新的type如下表：
 
 <table class="site-table">
     <thead>
@@ -407,3 +409,11 @@ radio单选框被点击时触发，回调函数返回一个object参数，携带
 
 - form.render(); //更新全部
 - form.render('select'); //刷新select选择框渲染
+
+第二个参数：filter，为 class="layui-form" 所在元素的 lay-filter="" 的值。你可以借助该参数，对表单完成局部更新。
+
+	<select id="bankCity" name="bankCity" lay-verify="required" lay-filter="bankCity">
+        <option value="">请选择地区</option>
+	</select>
+
+- form.render('select', 'bankCity'); 

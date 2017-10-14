@@ -114,13 +114,13 @@
 	};
 	
 	//表单控件渲染
-	Form.prototype.render = function(type){
+	Form.prototype.render = function(type, filter){
 		var that = this, items = {
 			//下拉选择框
 			select: function(){
 				var TIPS = '请选择', CLASS = 'layui-form-select', TITLE = 'layui-select-title'
 				
-				,selects = $(ELEM).find('select'), hide = function(e, clear){
+				,selects = $(ELEM).find(filter?  '[lay-filter="' + filter +'"]': 'select'), hide = function(e, clear){
 					if(!$(e.target).parent().hasClass(TITLE) || clear){
 						$('.'+CLASS).removeClass(CLASS+'ed');
 					}
@@ -168,7 +168,7 @@
 					//替代元素
 					var reElem = $([
 						'<div class="layui-unselect '+ CLASS + (disabled ? ' layui-select-disabled' : '') +'">'
-						,'<div class="'+ TITLE +'"><input type="text" placeholder="'+ (select.options[0].innerHTML ? select.options[0].innerHTML : TIPS) +'" value="'+ (value ? selected.html() : '') +'" readonly class="layui-input layui-unselect'+ (disabled ? (' '+DISABLED) : '') +'">'
+						,'<div class="'+ TITLE +'"><input type="text" value="'+ (select.options[0].innerHTML ? select.options[0].innerHTML : TIPS) +'" value="'+ (value ? selected.html() : '') +'" readonly class="layui-input layui-unselect'+ (disabled ? (' '+DISABLED) : '') +'">'
 						,'<i class="layui-edge"></i></div>'
 						,'<dl class="layui-anim layui-anim-upbit'+ (othis.find('optgroup')[0] ? ' layui-select-group' : '') +'">'+ function(options){
 							var arr = [];
@@ -195,7 +195,7 @@
 					checkbox: ['layui-form-checkbox', 'layui-form-checked', 'checkbox']
 					,_switch: ['layui-form-switch', 'layui-form-onswitch', 'switch']
 				}
-				,checks = $(ELEM).find('input[type=checkbox]')
+				,checks = $(ELEM).find(filter?  '[lay-filter="' + filter +'"]': 'input[type=checkbox]')
 				
 				,events = function(reElem, RE_CLASS){
 					var check = $(this);
@@ -242,7 +242,7 @@
 			//单选框
 			,radio: function(){
 				var CLASS = 'layui-form-radio'
-				,radios = $(ELEM).find('input[type=radio]')
+				,radios = $(ELEM).find(filter?  '[lay-filter="' + filter +'"]': 'input[type=radio]')
 				
 				,events = function(reElem){
 					var radio = $(this);
