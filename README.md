@@ -280,8 +280,9 @@ Form模块在Layui事件机制中注册了form模块事件，所以当你使用l
 </table>
 
 默认情况下，事件所监听的是全部的元素，但如果你只想监听某一个元素，使用事件过滤器即可。
-如：<select lay-filter="test"></select>
+如：
 
+	<select lay-filter="test"></select>
 
 	layui_form.on('select(test)', function(data){
 	  console.log(data);
