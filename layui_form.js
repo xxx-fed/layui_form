@@ -11,7 +11,7 @@
 
 	//异常提示
 	var error = function(msg){
-	  win.console && console.error && console.error('Layui hint: ' + msg);
+	  window.console && console.error && console.error('Layui hint: ' + msg);
 	}
 
 	var each = function(obj, fn){
