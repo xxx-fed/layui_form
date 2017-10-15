@@ -173,12 +173,14 @@
 						,'<dl class="layui-anim layui-anim-upbit'+ (othis.find('optgroup')[0] ? ' layui-select-group' : '') +'">'+ function(options){
 							var arr = [];
 							each(options, function(index, item){
-								if(index === 0 && !item.value) return;
-								if(item.tagName.toLowerCase() === 'optgroup'){
+								if(index === 0 && !item.value) {
+									arr.push('<dd lay-value="" class="layui-select-tips">'+ (item.innerHTML || TIPS) +'</dd>');
+								}else if(item.tagName.toLowerCase() === 'optgroup'){
 									arr.push('<dt>'+ item.label +'</dt>'); 
 								} else {
 									arr.push('<dd lay-value="'+ item.value +'" class="'+ (value === item.value ?  THIS : '') + (item.disabled ? (' '+DISABLED) : '') +'">'+ item.innerHTML +'</dd>');
 								}
+
 							});
 							return arr.join('');
 						}(othis.find('*')) +'</dl>'
