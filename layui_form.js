@@ -159,7 +159,7 @@
 					});
 					
 					//关闭下拉
-					$(document).off('click', hide).on('click', hide)
+					$(document).off('click.layui-form-select', hide).on('click.layui-form-select', hide)
 				}
 				
 				selects.each(function(index, select){
